@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 연산자_2</title>
+</head>
+<body>
+    <h2>비교 연산자</h2>
+    <pre>
+    == , !=, >, <, >=, <=
+
+    - 좌변과 우변을 같다, 같지않다, 초과, 미만, 이상, 이하 비교해서 
+      맞으면 true, 아니면 false 반환하는 연산자
+      (연산 결과로 boolean(논리 값) 반환)
+
+    - 복합 기호 사용할 때 등호(=)는 무조건 오른쪽에 작성(>=, <=)
+    </pre>
+
+    <hr>
+    <h3>입력된 두 값이 같은지 확인</h3>
+
+    <div>
+        <label for="compareValue1">1번</label>
+        <input type="text" id="compareValue1"> <br>
+
+        <label for="compareValue2">2번</label>
+        <input type="text" id="compareValue2"> <br>
+
+        <button id="btn1" onclick="compareFn1()">비교</button>
+        <span id="result1"></span>
+    </div>
+
+    <hr>
+    <h3>좌변에 입력한 수가 우변에 입력한 수보다 큰지 확인</h3>
+
+    <div>
+        <label for="compareValue3">3번</label>
+        <input type="text" id="compareValue3"> <br>
+
+        <label for="compareValue4">4번</label>
+        <input type="text" id="compareValue4"> <br>
+
+        <button id="btn2" onclick="compareFn2()">비교</button>
+        <span id="result2"></span>
+    </div>
+
+    <hr>
+    <h3>배수가 맞는지 확인</h3>
+    <div>
+        <label for="input3_1">첫 번째 입력 : </label> <br>
+        <input type="number" id="input3_1"> <br>
+
+        <label for="input3_2">두 번째 입력 : </label> <br>
+        <input type="number" id="input3_2">
+
+        <button onclick="checkFn3()">확인</button>
+
+        <h3 id="result3">5는 2의 배수 : false</h3>
+    </div>
+
+    <hr>
+
+    <h2>복합 대입 연산자(+=, -=, *=, /=, %=)</h2>
+
+    <pre>
+    - 기존 변수에 저장 되어있는 값에 새롭게 대입되는 값의 산술 연산 결과를 대입
+
+      (증감 연산자는 1씩 증가, 감소, 
+       복합 대입 연산자는 원하는 만큼 증가, 감소)
+      ex)
+      let temp = 10;
+
+      temp += 5; // temp = temp + 5; (누적/차감 효과)
+    </pre>
+
+    <h3>현재 값 : <span id="result4">0</span></h3>
+    <button onclick="minus4()">차감</button>
+    <input type="number" min="0" max="100" id="input4">
+    <button onclick="plus4()">누적</button>
+
+    <hr>
+
+    <h2>논리 연산자 ( &&, ||, ! )</h2>
+    <pre>
+    AND 연산자 (A && B)
+    - A, B 모두 true일 때 true
+    - 문장에서 그리고(이고), 이면서, 부터, 까지, 사이 있으면 AND
+
+    OR 연산자 (A || B)
+    - A 또는 B, 둘 다 true일 때 true
+    - 문장에서 또는,  이거나(거나) 있으면 OR
+
+    논리 부정(NOT) 연산자(!)
+    - 논리 값을 반대로 바꾸는 연산자
+    
+    ex) let test = true;
+        !test; // !true = false;
+
+    </pre>
+
+    <button onclick="checkFn5()">확인하기</button>
+
+    <hr>
+
+    <h2>삼항 연산자 (조건식 ? true : false)</h2>
+
+    <pre>
+    - 조건식의 결과에 따라서 수행되는 코드가 다른 연산자
+      (조건식은 항상 결과로 true 또는 false가 반환되도록 작성)
+    </pre>
+
+    <h3>로그인 하기</h3>
+    <pre>
+    - 입력된 id가 'member01',
+      입력된 pw가 'pass01!' 가 맞으면 
+      alert("로그인 성공이다라고");
+
+    - 둘 중 하나라도 노일치?
+      alert("너 누기야");
+    </pre>
+
+    <div>
+        ID : <input type="text" id="inputId"> <br>
+        PW : <input type="password" id="inputPw"> <br>
+        <button onclick="login()">로그인 도전</button>
+    </div>
+
+
+    <script src="../js/04_연산자2.js"></script>
+</body>
+</html>
