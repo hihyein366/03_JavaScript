@@ -1,10 +1,8 @@
 .container {
-    display: block;
     border: 2px solid black;
     width: 350px;
     height: 250px;
     padding: 20px;
-    justify-content: center;
     background-color: rgb(233, 255, 199);
 }
 
@@ -12,16 +10,23 @@
     justify-content: center;
     align-content: center;
     padding: 10px;
+
+}
+.btn {
+    display: flex;
+    flex-direction: row;
+
 }
 
 span > button {
-    width: 60px;
+    width: 80px;
     height: 55px;
+    justify-content: center;
     border-radius: 5px;
     font-weight: bold;
     font-size: 18px;
     color: white;
-    align-items: center;
+    margin: 0 8px;
     cursor: pointer;
 }
 
@@ -31,4 +36,12 @@ span > #plus {
 
 span > #minus {
     background-color: rgb(255, 55, 62);
+}
+
+#amount {
+    height: 25px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
 }
