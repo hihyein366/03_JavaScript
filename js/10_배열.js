@@ -131,3 +131,191 @@ function selectMenu(){
     // 난수 번째 index 요소 값을 화면에 출력
     menuResult.innerText = menus[randomNumber];
 }
+
+/* 주문하기 프로그램 */
+/* 
+    - 주문하기 버튼 클릭 시 prompt 이용해서
+      메뉴명, 수량 입력 받기
+    
+    - 메뉴명 입력 시 취소를 클릭하면 "주문 완료"
+
+    - 수량 입력 시 취소를 클릭하면 해당 메뉴 주문만 취소
+*/
+function orderFn(){
+    const tbody = document.getElementById("tbody");
+    const total = document.getElementById("total");
+
+    // menu array
+    const menus = ["라면", "김밥", "샌드위치", "우동"];
+
+    // price array
+    const prices = [4000, 3000, 5000, 6000];
+
+    // order menu count array
+    // -> 메뉴 개수 만큼의 크기 가지는 배열
+    const counts = new Array(menus.length); // -> all empty
+
+    // 비어있는 칸 0으로 채움
+    counts.fill(0);
+    // for(let i=0; i<counts.length; i++){
+    //     counts[i] = 0;
+    // }
+
+    while(true){
+        const selectMenu = prompt("주문할 메뉴명 입력");
+
+        if(selectMenu == null){ // 메뉴명 입력시 취소를 클릭한 경우
+            break;
+        }
+
+        /* 입력한 메뉴가 menus 몇번째 index에 존재하는가 */
+        // -> 배열 검색
+        // 1) for문 이용
+        // let idx = -1; // 일치하는 메뉴의 인덱스를 저장할 변수
+
+        // for(let i=0; i<menus.length; i++){
+
+        //     // 입력 받은 메뉴(selectMenu)와 menus[i] 값이 같다면 idx에 i값을 저장
+        //     if(selectMenu == menus[i]){
+        //         idx = i;
+        //         break; // 같은 메뉴를 찾으면 더이상 겁색 불필요(성능 개선)
+        //     }
+        // }
+
+        // 2) 배열명.indexOf("값");
+        // - JS 배열에서 제공하는 함수
+        // - 배열 내에 "값"이 존재하는 index 번호를 반환
+        // - 없다면 -1 반환
+        let idx = menus.indexOf(selectMenu);
+
+        // 잘못 추천한 경우(idx == -1) 다시 반복 시작
+        if(idx == -1) {
+            alert("없는 메뉴 입니다. 다시 입력 하라고 다시입력해 다시 다시 다시 다시 다시 다시 다시");
+            continue;
+        }
+
+        // 메뉴 입력 끝
+        // ---------------------------------------------------
+        // 수량 입력 시작
+        let input = prompt("수량 입력해.. 수량 입력...");
+
+        if(input == null) {
+            continue;
+        }
+
+        // 수량을 입력하지 않았거나 
+        if(input.length == 0 || isNaN(Number(input))) {
+            alert("잘못 입력 했잖아. 다시 주문해 다시 다시이 다시다시다시다시다시");
+            continue;
+        }
+
+        input = Number(input); // 숫자로 변환해서 저장
+
+        // 수량 입력 끝
+        // --------------------------------------------------
+        // munus, prices, counts 배열에 값 변경 시작
+
+        // idx : 선택한 메뉴가 존재하는 index 번호
+        // input : 입력한 수량(number 자료형)
+        counts[idx] += input;
+    } // while 종료
+
+    console.log(menus);
+    console.log(prices);
+    console.log(counts);
+
+    // ---------------------------------------------------
+    // 화면 출력하기 + 합계(total 계산) 시작
+
+    // tbody 이전 내용 지우기
+    tbody.innerHTML = "";
+
+    let sum = 0; // 합계 구하기 변수
+
+    for(let i=0; i<counts.length; i++){
+        if(counts[i] == 0){ // 메뉴 주문하지 않은 경우
+            continue;
+        }
+        // 한 줄 만들기
+        let tr = "<tr>"
+        tr += `<td>${menus[i]}</td>`;
+        tr += `<td>${prices[i]}</td>`;
+        tr += `<td>${counts[i]}</td>`;
+
+        tr += "</tr>"
+
+        // 화면에 tr 출력하기
+        tbody.innerHTML += tr;
+
+        // 합계 누적하기
+        sum += prices[i] * counts[i];
+
+    } // for문 끝
+
+    total.innerText = sum; // 합계 화면에 출력
+}
+
+// ------------------------------------------------------------------------------
+
+/* 2차원 배열 */
+function check5(){
+    const arr = [[1, 2, 3, 4],
+                 [5, 6, 7, 8,],
+                 [9, 10, 11, 12]];
+
+    // 1차원 배열 선언
+    const arr1 = [100, 200, 300, 400];
+    const arr2 = [900, 800, 700, 600];
+
+    // 2차원 배열 arr의 3, 4번 index 요소로 추가
+    arr[3] = arr1;
+    arr[4] = arr2;
+
+    console.log(arr);
+
+    // 2차원 배열 요소 조회하는 방법
+
+    // 배열명[행][열]
+
+    console.log(arr[1][3]); // 8
+    console.log(arr[4][3]); // 600
+    console.log(arr[0][0]); // 1
+}
+
+/* 2부터 2씩 증가하는 수를 5행 5열 배열의 모든 요소에 차례대로 대입하고 출력하기 */
+function check6(){
+    let count = 2;
+
+    const arr = []; // 2차원 배열 (요소로 1차원 배열 대입)
+
+    for(let row=0; row<5; row++){
+
+        // 1차원 배열을 만들어 arr[i]에 대입
+        arr[row] = [];
+
+        for(let col=0; col<5; col++){ // 열 제어
+            arr[row][col] = count; // row행 col열에 count 대입
+            count += 2; // count를 2 증가
+        }
+    }
+
+    console.log(arr);
+
+    // 2차원 배열 arr의 요소를 거꾸로 한 줄씩 출력하기
+
+    // 50 48 46 44 42
+    // 40 38 36 34 32
+    // ..
+
+    // row -> 4, 3, 2, 1, 0
+    for(let row=arr.length-1; row>=0; row--){
+
+        let str = "";
+
+        // col -> 4, 3, 2, 1, 0
+        for(let col=arr[row].length-1; col>=0; col--){
+            str += arr[row][col] + " ";
+        }
+        console.log(str);
+    }
+}
