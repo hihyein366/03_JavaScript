@@ -1,6 +1,3 @@
-
-
-
 function createTable() {
     const start = Number(document.getElementById("start").value);
     const end = Number(document.getElementById("end").value);
@@ -9,13 +6,7 @@ function createTable() {
     
     theadRow.innerHTML = ""; // for문 전 작성. 이전 내용 삭제
     for(let dan = start; dan <= end; dan++) {
-
-        let str = "";
-        for(let col=1; col<=9; col++){
-            str += col;
-            ul.innnerHTML = `<li>${start} 단</li>`
-        }
-        
+        theadRow.innerHTML += `<th>${dan}단</th>`
     }
 
     //----------------------
@@ -28,7 +19,7 @@ function createTable() {
     for(let num=1; num <=9; num++){
         let str = "<tr>";
         for(let dan=start; dan <= end; dan++){
-            str += `${dan} x ${num} = ${dan * num}`;
+            str += `<td>${dan} x ${num} = ${dan * num}</td>`;
         }
 
         str += "</tr>";
