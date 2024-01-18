@@ -1,0 +1,46 @@
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 200px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+}
+
+.container > div {
+    box-sizing: border-box;
+    height: 200px;
+    border: 1px solid black;
+
+    /* css 변경 시간 */
+    transition-duration: 0.5s;
+}
+
+.container *{
+    margin-bottom: 5px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    user-select: none;
+    height: 35px;
+    width: 400px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+
+.btn > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

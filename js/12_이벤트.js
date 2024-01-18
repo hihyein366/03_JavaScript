@@ -103,3 +103,28 @@ test2.addEventListener("click", function(){
 
     this.innerText = count; // 증가한 count 값을 test2 내용으로 대입
 });
+
+/* 입력한 색상으로 배경색 변경하기 */
+const box3 = document.querySelector("#box3");
+const input3 = document.querySelector("#input3");
+const btn3 = document.querySelector("#btn3");
+
+/* #btn3 '클릭'했을 때 */
+btn3.addEventListener("click", function(){
+    box3.style.backgroundColor = input3.value;
+});
+
+/* #input3에서 엔터 입력 시(key 관련 e) 배경색 변경 */
+input3.addEventListener("keyup", function(e){
+    if(e.key == "Enter") {
+        box3.style.backgroundColor = input3.value;
+    }
+});
+
+/* #box3를 클릭하면 현재 배경색을 alert로 출력 */
+box3.addEventListener("click", function(e){
+    // e : 이벤트 객체
+    // e.target : 이벤트가 발생한 대상 요소(이벤트 발생 요소)
+
+    alert(`배경색 : ${e.target.style.backgroundColor}`);
+});
