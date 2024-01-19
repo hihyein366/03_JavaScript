@@ -1,0 +1,5 @@
+button {
+    border: 3px solid hotpink;
+    border-radius: 5px;
+    cursor: pointer;
+}
