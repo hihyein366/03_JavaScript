@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 기본이벤트 제거</title>
+</head>
+<body>
+    <h2>기본 이벤트 제거</h2>
+    <pre>
+    a 태그의 기본 이벤트
+     : 클릭 시 href 속성에 작성된 url로 이동
+    
+    form 태그의 기본 이벤트
+     : form 태그 내부에서 submit 발생 시 action에 작성된 url로
+       form 태그 내부 input 값들을 제출
+
+    </pre>
+
+    <h3>a태그 기본 이벤트 제거</h3>
+    <a href="23_스톱워치.html" id="move">스톱워치로 이동</a>
+
+    <hr>
+    <h3>form 태그 기본 이벤트 제거</h3>
+    <!--  - action : 제출할 주소(url) 
+
+          - form 태그 name 속성 작성 시 
+         document.form태그name 으로 요소 접근 가능
+
+          - form 태그 제출 시 입력 값들이
+            ?name=value&name=value 형식으로 제출. (methos="GET" 인 경우)
+        -->
+
+    <!-- 방법1) e.preventDefault() 사용 -->
+    <form action="24_result.html" id="form" name="inputForm">
+
+        입력 1 : <input type="text" id="input1" name="i1"> <br>
+        입력 2 : <input type="text" id="input2" name="i2"> <br>
+        입력 3 : <input type="text" id="input3" name="i3"> <br>
+        입력 4 : <input type="text" id="input4" name="i4"> <br>
+
+        <button>값 제출</button>
+    </form>
+
+    <hr>
+
+    <!-- 방법2) onsubmit="return false" 이용한 방법 -->
+
+    <form action="24_result.html" onsubmit="return onsubmitTest()">
+
+        제출 0 <input type="radio" name="submitRadio" value="O">
+        제출 X <input type="radio" name="submitRadio" value="X">
+
+        <br>
+        <button>제출하기</button>
+    </form>
+
+    <!-- 방법3) 일반 버튼 클릭 시 form 태그 제출/막기 -->
+
+    <form action="24_result.html" name="inputForm3">
+        입력 : <input type="text" id="inputTest">
+
+        <button type="button" id="btn3">제출</button>
+    </form>
+
+
+    <script src="../js/24_기본이벤트제거.js"></script>
+</body>
+</html>
