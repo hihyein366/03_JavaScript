@@ -35,7 +35,7 @@ function check1() {
     /* JS 배열 특징을 이용한 사용법 */
 
     // 1. 길이 제한 X -> 값을 배열에 원하는만큼 추가 가능
-    arr1[0] = "가";
+    arr1[0] = true;
     arr1[1] = "나";
     arr1[2] = "다";
     console.log("arr1 : ", arr1);

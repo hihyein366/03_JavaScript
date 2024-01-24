@@ -182,6 +182,7 @@ function check8() {
 
 function check9() {
     for(let y=1; y<=5; y++) {
+
         let str = "";
         for(let x=1; x<=y; x++){ // x <= y 로 해서 
             str += x;

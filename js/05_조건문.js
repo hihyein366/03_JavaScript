@@ -38,11 +38,11 @@ function check3() {
 
     if(randomNumber == 0){
         // message = message + "0 입니다.";
-        message += "0 입니다.";
+        message += " 0 입니다.";
     } else if(randomNumber > 0) {
-        message += "양수다.";
+        message += " 양수다.";
     } else {
-        message += "음수";
+        message += " 음수";
     }
 
     alert(message);
@@ -79,16 +79,17 @@ function check4() {
             alert("성인");
         }
     } 
-/*  if ((age >= 0) && (age <= 13)) {
-        alert("어린이");
-    } else if((age >= 14) && (age <= 19)) {
-        alert("자네 아직 청소년")
-    } else if ((age >= 20) && (age <= 150)) {
-        alert("오 성인ㅋ")
-    } else {
-        alert("사람이 아니무니다")
-    }
- */
+
+        //     if (age >= 0 && age <= 13) {
+        //         alert("어린이");
+        //     } else if(age >= 14 && age <= 19) {
+        //         alert("자네 아직 청소년")
+        //     } else if (age >= 20 && age <= 150) {
+        //         alert("오 성인ㅋ");
+        //     } else {
+        //         alert("사람이 아니무니다");
+        //     }
+        // }
 }
 
 /* switch 이용한 계산기 */
