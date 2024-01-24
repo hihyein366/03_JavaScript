@@ -1,0 +1,45 @@
+/* #table {
+    width: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#apply {
+    text-align: center;
+}
+
+#box {
+    box-sizing: border-box;
+    border: 2px solid black;
+    margin-top: 30px;
+    width: 10px;
+    height: 10px;
+} */
+
+/* ------------------------------- */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content{ width: 100%;}
+
+#box{
+    border: 3px solid black;
+    margin-top: 30px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+}

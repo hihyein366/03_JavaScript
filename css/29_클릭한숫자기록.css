@@ -1,0 +1,32 @@
+#container{
+
+    height: 400px;
+    width: 300px;
+    margin: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#container > div {
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    
+}
+
+.numbers:hover{
+    background-color: orange;
+}
+
+.numbers:active {
+    background-color: blue;
+}
